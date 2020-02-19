@@ -3,6 +3,7 @@
 namespace KayStrobach\Releasy\Command\TYPO3\Extension;
 
 use InvalidArgumentException;
+use SplFileInfo;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -63,7 +64,7 @@ class PackageCommand extends Command
         $zip = new ZipArchive();
         $zip->open($input->getArgument('output') . '/' . $input->getArgument('name') .'.zip', ZIPARCHIVE::CREATE);
 
-        /** @var \SplFileInfo $file */
+        /** @var SplFileInfo $file */
         foreach ($files as $file) {
             $localFileName = substr($file->getPathname(), strlen($path));
             $zip->addFile($file->getPathname(), $localFileName);
