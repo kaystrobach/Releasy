@@ -1,0 +1,22 @@
+#!/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/Classes/ReleaseCommand.php';
+require_once __DIR__ . '/Classes/ExtensionListCommand.php';
+require_once __DIR__ . '/Classes/PackageCommand.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$releaseCommand = new ReleaseCommand();
+$extensionListCommand = new ExtensionListCommand();
+$packageCommand = new PackageCommand();
+
+$application->add($releaseCommand);
+$application->add($extensionListCommand);
+$application->add($packageCommand);
+$application->setDefaultCommand($releaseCommand->getName());
+
+$application->run();

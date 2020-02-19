@@ -1,0 +1,27 @@
+{
+    "name": "kaystrobach/releasy",
+    "description": "Release Helper to create tags etc",
+    "type": "project",
+    "license": "MIT",
+    "config": {
+        "platform": {
+            "php": "7.2"
+        },
+        "sort-packages": true
+    },
+    "authors": [
+        {
+            "name": "Kay Strobach",
+            "email": "info@kay-strobach.de"
+        }
+    ],
+    "require": {
+        "symfony/console": "^4.4",
+        "symfony/finder": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "KayStrobach\\Releasy\\": "src"
+        }
+    }
+}
