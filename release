@@ -1,22 +1,22 @@
-#!/bin/env php
+#!/usr/bin/env php
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/Classes/ReleaseCommand.php';
-require_once __DIR__ . '/Classes/ExtensionListCommand.php';
-require_once __DIR__ . '/Classes/PackageCommand.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+
+$commands = [
+    new \KayStrobach\Releasy\Command\ReleaseCommand(),
+    new \KayStrobach\Releasy\Command\ExtensionListCommand(),
+    new \KayStrobach\Releasy\Command\PackageCommand(),
+];
 
 $application = new Application();
+$application->addCommands($commands);
 
-$releaseCommand = new ReleaseCommand();
-$extensionListCommand = new ExtensionListCommand();
-$packageCommand = new PackageCommand();
-
-$application->add($releaseCommand);
-$application->add($extensionListCommand);
-$application->add($packageCommand);
-$application->setDefaultCommand($releaseCommand->getName());
+/** @var Command $defaultCommand */
+$defaultCommand = $commands[0];
+$application->setDefaultCommand($defaultCommand->getName());
 
 $application->run();
