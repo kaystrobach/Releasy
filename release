@@ -7,17 +7,19 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 
 $commands = [
-    new \KayStrobach\Releasy\Command\ReleaseCommand(),
-    new \KayStrobach\Releasy\Command\ExtensionListCommand(),
-    new \KayStrobach\Releasy\Command\PackageCommand(),
-    new \KayStrobach\Releasy\Command\PharCommand(),
+    new \KayStrobach\Releasy\Command\Composer\SetVersionCommand(),
+    new \KayStrobach\Releasy\Command\Git\TagCommand(),
+    new \KayStrobach\Releasy\Command\Phar\CreateCommand(),
+    new \KayStrobach\Releasy\Command\Release\CreateCommand(),
+    new \KayStrobach\Releasy\Command\Release\UpdateChangelogCommand(),
+    new \KayStrobach\Releasy\Command\TYPO3\Extension\ListCommand(),
+    new \KayStrobach\Releasy\Command\TYPO3\Extension\PackageCommand(),
+    new \KayStrobach\Releasy\Command\TYPO3\Extension\SetVersionCommand(),
 ];
 
-$application = new Application();
+$application = new Application('releasy', '1.0.0');
 $application->addCommands($commands);
 
-/** @var Command $defaultCommand */
-$defaultCommand = $commands[0];
-$application->setDefaultCommand($defaultCommand->getName());
+$application->setDefaultCommand('list');
 
 $application->run();

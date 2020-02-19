@@ -1,6 +1,6 @@
 <?php
 
-namespace KayStrobach\Releasy\Command;
+namespace KayStrobach\Releasy\Command\TYPO3\Extension;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -10,9 +10,9 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Finder\Finder;
 
-class ExtensionListCommand extends Command
+class ListCommand extends Command
 {
-    protected static $defaultName = 'extlist';
+    protected static $defaultName = 'typo3:extension:list';
 
     protected function execute(
         InputInterface $input,

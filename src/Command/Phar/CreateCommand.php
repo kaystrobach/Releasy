@@ -1,15 +1,15 @@
 <?php
 
-namespace KayStrobach\Releasy\Command;
+namespace KayStrobach\Releasy\Command\Phar;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class PharCommand extends Command
+class CreateCommand extends Command
 {
-    protected static $defaultName = 'phar';
+    protected static $defaultName = 'phar:create';
 
     protected function configure()
     {

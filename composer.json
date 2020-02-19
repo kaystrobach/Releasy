@@ -17,11 +17,12 @@
     ],
     "require": {
         "symfony/console": "^4.4",
-        "symfony/finder": "^4.4"
+        "symfony/finder": "^4.4",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "KayStrobach\\Releasy\\": "src"
+            "KayStrobach\\Releasy\\": "src/"
         }
     }
 }

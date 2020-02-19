@@ -1,6 +1,6 @@
 <?php
 
-namespace KayStrobach\Releasy\Command;
+namespace KayStrobach\Releasy\Command\TYPO3\Extension;
 
 use InvalidArgumentException;
 use Symfony\Component\Console\Command\Command;
@@ -12,7 +12,7 @@ use ZipArchive;
 
 class PackageCommand extends Command
 {
-    protected static $defaultName = 'package';
+    protected static $defaultName = 'typo3:extension:package';
 
     protected function configure()
     {
