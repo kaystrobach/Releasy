@@ -10,6 +10,7 @@ $commands = [
     new \KayStrobach\Releasy\Command\ReleaseCommand(),
     new \KayStrobach\Releasy\Command\ExtensionListCommand(),
     new \KayStrobach\Releasy\Command\PackageCommand(),
+    new \KayStrobach\Releasy\Command\PharCommand(),
 ];
 
 $application = new Application();
