@@ -4,10 +4,10 @@ A small tool to automate tasks related to projects with monolithic repos
 
 # Installation
 
-via composer 
+via composer (please add this repo as package source)
 
 ```bash
-composer require kaystrobacg/releasy @dev
+composer require kaystrobach/releasy @dev
 ```
 
 via git
